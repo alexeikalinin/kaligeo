@@ -33,6 +33,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     --danger:#C8412C;
   }
   *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
   html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;font-feature-settings:"ss01","cv11","cv05"}
   body{font-size:16px;line-height:1.55;letter-spacing:-0.005em}
   h1,h2,h3,h4{letter-spacing:-0.022em}
@@ -261,6 +262,10 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     .annotate{display:none}
     .nav-links{display:none}
   }
+
+  /* Scroll-reveal base state */
+  .sr{opacity:0;transform:translateY(28px)}
+  @media(prefers-reduced-motion:reduce){.sr{opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -870,6 +875,131 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     restart();
   }
 })();
+</script>
+
+<script type="module">
+import { animate, inView, stagger } from 'https://cdn.jsdelivr.net/npm/motion@latest/+esm';
+
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+
+  /* ── Helpers ── */
+  const reveal = (els, opts = {}) => {
+    (typeof els === 'string' ? document.querySelectorAll(els) : els).forEach(el => {
+      el.classList.add('sr');
+      inView(el, () => {
+        animate(el, { opacity: 1, transform: 'translateY(0px)' },
+          { duration: 0.55, easing: [0.22, 1, 0.36, 1], ...opts });
+      }, { margin: '-60px 0px' });
+    });
+  };
+
+  const staggerReveal = (parent, childSel, delay = 0.08) => {
+    document.querySelectorAll(parent).forEach(wrap => {
+      const kids = wrap.querySelectorAll(childSel);
+      kids.forEach(k => k.classList.add('sr'));
+      inView(wrap, () => {
+        animate(kids, { opacity: 1, transform: 'translateY(0px)' },
+          { duration: 0.5, easing: [0.22, 1, 0.36, 1], delay: stagger(delay) });
+      }, { margin: '-40px 0px' });
+    });
+  };
+
+  /* ── Hero ── */
+  const heroEls = document.querySelectorAll('.hero .tag, .hero h1, .hero .sub, .hero .cta-row, .hero .meta');
+  heroEls.forEach((el, i) => {
+    el.classList.add('sr');
+    animate(el, { opacity: 1, transform: 'translateY(0px)' },
+      { duration: 0.6, easing: [0.22, 1, 0.36, 1], delay: 0.08 + i * 0.09 });
+  });
+  const mockEl = document.querySelector('.mock');
+  if (mockEl) {
+    mockEl.classList.add('sr');
+    animate(mockEl, { opacity: 1, transform: 'translateY(0px)' },
+      { duration: 0.7, easing: [0.22, 1, 0.36, 1], delay: 0.35 });
+  }
+
+  /* ── Section eyebrows + titles ── */
+  reveal('.eyebrow, .section-title, .lede');
+
+  /* ── Problem stats — count-up ── */
+  staggerReveal('.stats', '.stat', 0.12);
+  document.querySelectorAll('.stat .big').forEach(el => {
+    const text = el.innerHTML;
+    const match = text.match(/^(\d+)/);
+    if (!match) return;
+    const target = parseInt(match[1]);
+    inView(el, () => {
+      let start = null;
+      const duration = 900;
+      const step = ts => {
+        if (!start) start = ts;
+        const p = Math.min((ts - start) / duration, 1);
+        const ease = 1 - Math.pow(1 - p, 3);
+        el.innerHTML = text.replace(/^\d+/, String(Math.round(ease * target)));
+        if (p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }, { margin: '-80px 0px' });
+  });
+
+  /* ── Solution list ── */
+  staggerReveal('.sol-list', '.sol-item', 0.1);
+  reveal('.report');
+
+  /* ── Bar chart — animate widths ── */
+  inView('.report', () => {
+    document.querySelectorAll('.bar-fill').forEach((bar, i) => {
+      const target = bar.style.width;
+      bar.style.width = '0%';
+      animate(bar, { width: target },
+        { duration: 0.7, easing: [0.22, 1, 0.36, 1], delay: 0.3 + i * 0.08 });
+    });
+  }, { margin: '-60px 0px' });
+
+  /* ── Deliverables ── */
+  staggerReveal('.deliver-grid', '.del', 0.1);
+
+  /* ── Steps ── */
+  staggerReveal('.steps', '.step', 0.1);
+
+  /* ── Social proof ── */
+  staggerReveal('.t-grid', '.t-card, .case', 0.12);
+
+  /* ── Pricing ── */
+  staggerReveal('.price-grid', '.price', 0.1);
+
+  /* ── CTA block ── */
+  reveal('.cta-block h2, .urgency, .cta-form');
+
+  /* ── FAQ ── */
+  staggerReveal('.faq-grid > div:last-child', 'details.q', 0.07);
+
+  /* ── Nav link hover underline ── */
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.style.transition = 'color .2s ease';
+  });
+
+  /* ── Button ripple ── */
+  document.querySelectorAll('.btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      const r = document.createElement('span');
+      const d = Math.max(btn.offsetWidth, btn.offsetHeight);
+      Object.assign(r.style, {
+        position:'absolute', borderRadius:'50%',
+        width: d+'px', height: d+'px',
+        left: (e.offsetX - d/2)+'px', top: (e.offsetY - d/2)+'px',
+        background: 'rgba(255,255,255,0.25)',
+        pointerEvents: 'none',
+        transform: 'scale(0)', opacity: '1'
+      });
+      btn.style.position = 'relative';
+      btn.style.overflow = 'hidden';
+      btn.appendChild(r);
+      animate(r, { transform: 'scale(2.5)', opacity: 0 }, { duration: 0.5 })
+        .finished.then(() => r.remove());
+    });
+  });
+}
 </script>
 </body>
 </html>
