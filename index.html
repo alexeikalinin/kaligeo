@@ -1015,6 +1015,50 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   });
 }
 
+/* ── Currency switcher ── */
+const PRICES = {
+  usd: [{ sym:'$', val:'50'  }, { sym:'$', val:'150' }, { sym:'$', val:'300' }],
+  rub: [{ sym:'₽', val:'4 900' }, { sym:'₽', val:'14 900' }, { sym:'₽', val:'29 900' }]
+};
+const PLAN_LABELS = {
+  usd: ['Базовый ($50)',    'Стандарт ($150)',    'Продвинутый ($300+)'],
+  rub: ['Базовый (4 900 ₽)', 'Стандарт (14 900 ₽)', 'Продвинутый (29 900 ₽+)']
+};
+
+let currentCurrency = 'usd';
+
+function setCurrency(cur) {
+  currentCurrency = cur;
+  PRICES[cur].forEach((p, i) => {
+    document.getElementById('cur-' + i).textContent = p.sym;
+    document.getElementById('amt-' + i).textContent = p.val;
+  });
+  document.getElementById('btn-usd').classList.toggle('active', cur === 'usd');
+  document.getElementById('btn-rub').classList.toggle('active', cur === 'rub');
+  const badge = document.getElementById('plan-badge');
+  if (badge.style.display !== 'none' && badge.textContent) {
+    const planField = document.getElementById('cta-plan').value;
+    if (planField && planField !== 'не выбран') {
+      const idx = ['Базовый','Стандарт','Продвинутый'].findIndex(n => planField.startsWith(n));
+      if (idx !== -1) {
+        const label = PLAN_LABELS[cur][idx];
+        badge.textContent = '✓ Выбран тариф: ' + label;
+      }
+    }
+  }
+}
+
+(async () => {
+  try {
+    const res = await fetch('https://ipapi.co/country_code/', { signal: AbortSignal.timeout(3000) });
+    const code = (await res.text()).trim();
+    if (code === 'RU') setCurrency('rub');
+    else setCurrency('usd');
+  } catch {
+    setCurrency('usd');
+  }
+})();
+
 /* ── Plan selector ── */
 function selectPlan(name, price) {
   document.getElementById('cta-plan').value = name + ' (' + price + ')';
