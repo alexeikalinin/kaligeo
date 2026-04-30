@@ -1007,6 +1007,15 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   });
 }
 
+/* ── Plan selector ── */
+function selectPlan(name, price) {
+  document.getElementById('cta-plan').value = name + ' (' + price + ')';
+  document.getElementById('cta-subject').value = 'Заявка: ' + name + ' (' + price + ') — KaliGEO';
+  const badge = document.getElementById('plan-badge');
+  badge.textContent = '✓ Выбран тариф: ' + name + ' ' + price;
+  badge.style.display = 'block';
+}
+
 /* ── CTA form submit via Web3Forms ── */
 const ctaForm = document.getElementById('cta-form');
 if (ctaForm) {
