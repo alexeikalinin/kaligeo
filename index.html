@@ -1004,6 +1004,35 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     });
   });
 }
+
+/* ── CTA form submit via Web3Forms ── */
+const ctaForm = document.getElementById('cta-form');
+if (ctaForm) {
+  ctaForm.addEventListener('submit', async e => {
+    e.preventDefault();
+    const btn = ctaForm.querySelector('button[type=submit]');
+    const originalText = btn.innerHTML;
+    btn.textContent = 'Отправляем…';
+    btn.disabled = true;
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: new FormData(ctaForm)
+      });
+      const data = await res.json();
+      if (data.success) {
+        ctaForm.querySelector('input[type=email]').value = '';
+        btn.textContent = 'Отправлено ✓';
+        setTimeout(() => { btn.innerHTML = originalText; btn.disabled = false; }, 4000);
+      } else {
+        throw new Error();
+      }
+    } catch {
+      btn.textContent = 'Ошибка — попробуйте ещё раз';
+      setTimeout(() => { btn.innerHTML = originalText; btn.disabled = false; }, 3000);
+    }
+  });
+}
 </script>
 </body>
 </html>
