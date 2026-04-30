@@ -598,7 +598,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
           <li>PDF-отчёт на 6 страниц</li>
           <li>Без созвона и без плана</li>
         </ul>
-        <a href="#cta" class="btn btn-ghost">Взять Базовый</a>
+        <a href="#cta" class="btn btn-ghost" onclick="selectPlan('Базовый','$50')">Взять Базовый</a>
       </div>
 
       <div class="price feat">
@@ -613,7 +613,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
           <li>Видеоразбор 15 минут</li>
           <li>План роста на 30 дней</li>
         </ul>
-        <a href="#cta" class="btn btn-accent">Взять Стандарт <span class="arrow">→</span></a>
+        <a href="#cta" class="btn btn-accent" onclick="selectPlan('Стандарт','$150')">Взять Стандарт <span class="arrow">→</span></a>
       </div>
 
       <div class="price">
@@ -627,7 +627,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
           <li>План на 90 дней + 30-мин стратсессия</li>
           <li>Смета на внедрение (опция)</li>
         </ul>
-        <a href="#cta" class="btn btn-primary">Заказать Продвинутый</a>
+        <a href="#cta" class="btn btn-primary" onclick="selectPlan('Продвинутый','$300+')">Заказать Продвинутый</a>
       </div>
     </div>
   </div>
