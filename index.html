@@ -588,12 +588,17 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   <div class="wrap">
     <div class="eyebrow"><span class="num">06</span> Тарифы</div>
     <h2 class="section-title serif">Разовые аудиты, <em>без подписки и абонементов.</em></h2>
-    <p class="lede">Выбирайте глубину под ставку. Любой тариф — за 48 часов, с последующим звонком через 14 дней.</p>
+    <p class="lede">Выбирайте глубину под ставку. Любой тариф — за 48 часов, с последующим звонком через 14 дней.
+      <span class="currency-toggle" id="cur-toggle">
+        <button id="btn-usd" class="active" onclick="setCurrency('usd')">$</button>
+        <button id="btn-rub" onclick="setCurrency('rub')">₽</button>
+      </span>
+    </p>
 
     <div class="price-grid">
       <div class="price">
         <div class="name">Базовый</div>
-        <div class="amt"><span class="cur">$</span>50</div>
+        <div class="amt"><span class="cur" id="cur-0"></span><span id="amt-0">50</span></div>
         <div class="desc">Быстрая проверка одной ниши. Пригодится до того, как вкладываться в SEO.</div>
         <ul>
           <li>15 запросов · 3 AI-платформы</li>
