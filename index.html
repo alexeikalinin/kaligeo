@@ -1060,11 +1060,13 @@ function setCurrency(cur) {
 })();
 
 /* ── Plan selector ── */
-function selectPlan(name, price) {
-  document.getElementById('cta-plan').value = name + ' (' + price + ')';
-  document.getElementById('cta-subject').value = 'Заявка: ' + name + ' (' + price + ') — KaliGEO';
+function selectPlan(name) {
+  const idx = ['Базовый','Стандарт','Продвинутый'].indexOf(name);
+  const label = PLAN_LABELS[currentCurrency][idx];
+  document.getElementById('cta-plan').value = label;
+  document.getElementById('cta-subject').value = 'Заявка: ' + label + ' — KaliGEO';
   const badge = document.getElementById('plan-badge');
-  badge.textContent = '✓ Выбран тариф: ' + name + ' ' + price;
+  badge.textContent = '✓ Выбран тариф: ' + label;
   badge.style.display = 'block';
 }
 
