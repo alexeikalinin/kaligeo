@@ -1102,31 +1102,36 @@ window.selectPlan = function(name) {
   badge.style.display = 'block';
 };
 
-/* ── CTA form submit via Web3Forms ── */
+/* ── CTA form submit via Formspree ── */
 const ctaForm = document.getElementById('cta-form');
 if (ctaForm) {
   ctaForm.addEventListener('submit', async e => {
     e.preventDefault();
     const btn = ctaForm.querySelector('button[type=submit]');
-    const originalText = btn.innerHTML;
+    const originalHTML = btn.innerHTML;
     btn.textContent = 'Отправляем…';
     btn.disabled = true;
     try {
-      const res = await fetch('https://api.web3forms.com/submit', {
+      const res = await fetch(ctaForm.action, {
         method: 'POST',
-        body: new FormData(ctaForm)
+        body: new FormData(ctaForm),
+        headers: { Accept: 'application/json' }
       });
-      const data = await res.json();
-      if (data.success) {
-        ctaForm.querySelector('input[type=email]').value = '';
-        btn.textContent = 'Отправлено ✓';
-        setTimeout(() => { btn.innerHTML = originalText; btn.disabled = false; }, 4000);
+      if (res.ok) {
+        ctaForm.innerHTML = `
+          <div style="text-align:center;padding:28px 0">
+            <div style="font-size:36px;margin-bottom:12px">✓</div>
+            <div style="color:var(--bg);font-size:18px;font-weight:600;margin-bottom:8px">Заявка принята!</div>
+            <div style="color:#6A6D75;font-size:14px;line-height:1.5">Мы свяжемся с вами в течение часа.<br>Проверьте папку «Спам» если письмо не пришло.</div>
+          </div>`;
       } else {
         throw new Error();
       }
     } catch {
-      btn.textContent = 'Ошибка — попробуйте ещё раз';
-      setTimeout(() => { btn.innerHTML = originalText; btn.disabled = false; }, 3000);
+      btn.innerHTML = originalHTML;
+      btn.disabled = false;
+      const hint = ctaForm.querySelector('.form-hint');
+      if (hint) { hint.textContent = 'Ошибка отправки — попробуйте ещё раз или напишите на hello@kaligeo.ru'; hint.style.color = '#ff6b6b'; }
     }
   });
 }
