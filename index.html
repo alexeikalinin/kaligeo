@@ -1116,12 +1116,13 @@ if (ctaForm) {
     btn.textContent = 'Отправляем…';
     btn.disabled = true;
     try {
-      const res = await fetch(ctaForm.action, {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         body: new FormData(ctaForm),
         headers: { Accept: 'application/json' }
       });
-      if (res.ok) {
+      const data = await res.json();
+      if (data.success) {
         ctaForm.innerHTML = `
           <div style="text-align:center;padding:28px 0">
             <div style="font-size:36px;margin-bottom:12px">✓</div>
