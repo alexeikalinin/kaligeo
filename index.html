@@ -226,9 +226,18 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   @keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in oklab, var(--accent) 50%, transparent)}70%{box-shadow:0 0 0 10px color-mix(in oklab, var(--accent) 0%, transparent)}100%{box-shadow:0 0 0 0 color-mix(in oklab, var(--accent) 0%, transparent)}}
   .urgency .txt{font-size:14px;color:#C6C8CE}
   .urgency .txt b{color:var(--bg)}
-  .cta-form{display:flex;gap:8px;background:#16181F;padding:8px;border-radius:999px;border:1px solid #2A2D35}
-  .cta-form input{flex:1;background:transparent;border:0;outline:0;color:var(--bg);padding:10px 16px;font-family:inherit;font-size:15px}
-  .cta-form input::placeholder{color:#6A6D75}
+  .cta-form{background:#16181F;padding:24px;border-radius:20px;border:1px solid #2A2D35;display:flex;flex-direction:column;gap:12px}
+  .cta-form .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .cta-form .form-field{display:flex;flex-direction:column;gap:6px}
+  .cta-form label{font-size:11px;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.08em;color:#6A6D75}
+  .cta-form input,.cta-form select{background:#0F1115;border:1px solid #2A2D35;border-radius:10px;outline:0;color:var(--bg);padding:11px 14px;font-family:inherit;font-size:15px;transition:border-color .15s}
+  .cta-form input::placeholder{color:#4A4D55}
+  .cta-form input:focus,.cta-form select:focus{border-color:var(--accent)}
+  .cta-form select{cursor:pointer;color:#C6C8CE}
+  .cta-form select option{background:#0F1115}
+  .cta-form .submit-row{margin-top:4px}
+  .cta-form .submit-row .btn{width:100%;justify-content:center;font-size:16px;padding:16px 24px}
+  .cta-form .form-hint{font-size:12px;color:#4A4D55;text-align:center}
   .cta-eyebrow::before{background:var(--accent) !important}
   .cta-eyebrow{color:#C6C8CE !important}
   .cta-eyebrow .num{color:#6A6D75 !important}
