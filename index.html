@@ -1017,50 +1017,53 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 
 /* ── Currency switcher ── */
 const PRICES = {
-  usd: [{ sym:'$', val:'50'  }, { sym:'$', val:'150' }, { sym:'$', val:'300' }],
-  rub: [{ sym:'₽', val:'4 900' }, { sym:'₽', val:'14 900' }, { sym:'₽', val:'29 900' }]
+  usd: [
+    '<span class="cur">$</span>50',
+    '<span class="cur">$</span>150',
+    '<span class="cur">$</span>300<span class="amt-plus">+</span>'
+  ],
+  rub: [
+    '4&nbsp;900<span class="cur cur-suf">₽</span>',
+    '14&nbsp;900<span class="cur cur-suf">₽</span>',
+    '29&nbsp;900<span class="cur cur-suf">₽</span><span class="amt-plus">+</span>'
+  ]
 };
 const PLAN_LABELS = {
-  usd: ['Базовый ($50)',    'Стандарт ($150)',    'Продвинутый ($300+)'],
+  usd: ['Базовый ($50)', 'Стандарт ($150)', 'Продвинутый ($300+)'],
   rub: ['Базовый (4 900 ₽)', 'Стандарт (14 900 ₽)', 'Продвинутый (29 900 ₽+)']
 };
 
 let currentCurrency = 'usd';
 
-function setCurrency(cur) {
+window.setCurrency = function(cur) {
   currentCurrency = cur;
-  PRICES[cur].forEach((p, i) => {
-    document.getElementById('cur-' + i).textContent = p.sym;
-    document.getElementById('amt-' + i).textContent = p.val;
+  PRICES[cur].forEach((html, i) => {
+    document.getElementById('amt-' + i).innerHTML = html;
   });
   document.getElementById('btn-usd').classList.toggle('active', cur === 'usd');
   document.getElementById('btn-rub').classList.toggle('active', cur === 'rub');
   const badge = document.getElementById('plan-badge');
-  if (badge.style.display !== 'none' && badge.textContent) {
+  if (badge && badge.style.display !== 'none' && badge.textContent) {
     const planField = document.getElementById('cta-plan').value;
     if (planField && planField !== 'не выбран') {
       const idx = ['Базовый','Стандарт','Продвинутый'].findIndex(n => planField.startsWith(n));
-      if (idx !== -1) {
-        const label = PLAN_LABELS[cur][idx];
-        badge.textContent = '✓ Выбран тариф: ' + label;
-      }
+      if (idx !== -1) badge.textContent = '✓ Выбран тариф: ' + PLAN_LABELS[cur][idx];
     }
   }
-}
+};
 
 (async () => {
   try {
     const res = await fetch('https://ipapi.co/country_code/', { signal: AbortSignal.timeout(3000) });
     const code = (await res.text()).trim();
-    if (code === 'RU') setCurrency('rub');
-    else setCurrency('usd');
+    window.setCurrency(code === 'RU' ? 'rub' : 'usd');
   } catch {
-    setCurrency('usd');
+    window.setCurrency('usd');
   }
 })();
 
 /* ── Plan selector ── */
-function selectPlan(name) {
+window.selectPlan = function(name) {
   const idx = ['Базовый','Стандарт','Продвинутый'].indexOf(name);
   const label = PLAN_LABELS[currentCurrency][idx];
   document.getElementById('cta-plan').value = label;
@@ -1068,7 +1071,7 @@ function selectPlan(name) {
   const badge = document.getElementById('plan-badge');
   badge.textContent = '✓ Выбран тариф: ' + label;
   badge.style.display = 'block';
-}
+};
 
 /* ── CTA form submit via Web3Forms ── */
 const ctaForm = document.getElementById('cta-form');
