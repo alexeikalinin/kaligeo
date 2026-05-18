@@ -867,10 +867,73 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       </svg>
       <span class="wd-kali">Kali</span><span class="wd-geo">GEO</span>
     </div>
-    <div>© 2026 KaliGEO — независимый прототип. Все упомянутые бренды принадлежат их владельцам.</div>
-    <div class="links"><a href="#">Конфиденциальность</a><a href="#">Условия</a><a href="#cta">Контакты</a></div>
+    <div>© 2026 KaliGEO. Все упомянутые бренды принадлежат их владельцам.</div>
+    <div class="links">
+      <a href="#payment-rules">Правила оплаты</a>
+      <a href="#privacy">Конфиденциальность</a>
+      <a href="#returns">Возврат</a>
+      <a href="#cta">Контакты</a>
+    </div>
+  </div>
+
+  <!-- Юридическая информация (требование Альфа-Банк п.1) -->
+  <div class="wrap">
+    <div class="legal-block">
+      <strong>Реквизиты продавца:</strong> ООО «KaliGEO» · Республика Беларусь, г. Минск, ул. Независимости, 1 ·
+      УНП 000000000 · Тел.: +375 (29) 000-00-00 · Email: hello@kaligeo.by ·
+      Регистрационное свидетельство № 0000000000, выдано исполнительным комитетом г. Минска.
+      Вид деятельности лицензированию не подлежит.
+      <div class="legal-links">
+        <a href="#payment-rules">Правила оплаты и безопасность</a>
+        <a href="#privacy">Политика конфиденциальности</a>
+        <a href="#returns">Правила возврата</a>
+        <a href="#delivery">Порядок оказания услуг</a>
+        <a href="https://www.alfabank.by/upload/docs/bank/pravila-oplati.pdf" target="_blank" rel="noopener">Правила МПС Visa</a>
+      </div>
+    </div>
   </div>
 </footer>
+
+<!-- ══ PAYMENT MODAL ══ -->
+<div class="pay-overlay" id="pay-overlay" role="dialog" aria-modal="true" aria-label="Оплата заказа">
+  <div class="pay-card">
+    <button class="close-btn" onclick="closePayment()" aria-label="Закрыть">×</button>
+    <div class="pay-plan-badge" id="pm-plan">Стандарт</div>
+    <h3>Оплата заказа</h3>
+    <p class="pay-card-sub">Переход на защищённую страницу Альфа-Банка</p>
+    <div class="pay-amount-row">
+      <span class="pay-amount" id="pm-amount">449</span>
+      <span class="pay-currency">BYN</span>
+    </div>
+    <p class="pay-note">После оплаты вы получите подтверждение на email.<br>Срок выполнения — 48 часов с момента оплаты.</p>
+    <div class="pay-logos-mini">
+      <svg class="pay-logo" viewBox="0 0 86 54" width="64" height="40" xmlns="http://www.w3.org/2000/svg"><rect width="86" height="54" rx="6" fill="#1A1F71"/><text x="43" y="37" font-family="Arial" font-size="26" font-weight="700" font-style="italic" fill="#FFF" text-anchor="middle" letter-spacing="1.5">VISA</text></svg>
+      <svg class="pay-logo" viewBox="0 0 86 54" width="64" height="40" xmlns="http://www.w3.org/2000/svg"><rect width="86" height="54" rx="6" fill="#252525"/><circle cx="32" cy="27" r="16" fill="#EB001B"/><circle cx="54" cy="27" r="16" fill="#F79E1B"/><path d="M43 13.8a16 16 0 0 1 0 26.4A16 16 0 0 1 43 13.8z" fill="#FF5F00"/></svg>
+      <svg class="pay-logo" viewBox="0 0 86 54" width="64" height="40" xmlns="http://www.w3.org/2000/svg"><rect width="86" height="54" rx="6" fill="#007A3D"/><rect x="0" y="34" width="86" height="20" fill="#CF101A"/><rect x="0" y="34" width="86" height="4" fill="#FFF"/><text x="43" y="28" font-family="Arial" font-size="13" font-weight="700" fill="#FFF" text-anchor="middle">БЕЛКАРТ</text></svg>
+      <svg class="pay-logo" viewBox="0 0 86 54" width="64" height="40" xmlns="http://www.w3.org/2000/svg"><rect width="86" height="54" rx="6" fill="#EF3124"/><text x="43" y="20" font-family="Arial" font-size="8" font-weight="600" fill="rgba(255,255,255,0.85)" text-anchor="middle">АЛЬФА-БАНК</text><text x="43" y="42" font-family="Georgia,serif" font-size="26" font-weight="700" fill="white" text-anchor="middle">А</text></svg>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <button class="btn btn-accent" style="width:100%;justify-content:center;font-size:16px;padding:16px" onclick="processPayment()">
+        Перейти к оплате →
+      </button>
+      <button class="btn btn-ghost" style="width:100%;justify-content:center" onclick="closePayment()">Отмена</button>
+    </div>
+    <div class="pay-loading" id="pm-loading">
+      <div class="spin"></div>
+      <span>Создаём заказ в Альфа-Банке…</span>
+    </div>
+    <div class="pay-error" id="pm-error"></div>
+  </div>
+</div>
+
+<!-- Уведомление об успешной / неудачной оплате -->
+<div class="pay-banner" id="pay-banner"></div>
+
+<!-- Скрытые секции с юридической информацией (якорные ссылки из футера) -->
+<section id="payment-rules" style="padding:72px 0;border-top:1px solid var(--rule);display:none"></section>
+<section id="privacy" style="display:none"></section>
+<section id="returns" style="display:none"></section>
+<section id="delivery" style="display:none"></section>
 
 <!-- TWEAKS PANEL -->
 <div id="tweaks">
