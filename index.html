@@ -1031,6 +1031,114 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 
   apply();
 
+  /* ---------- Currency helpers ---------- */
+  window.setCurrency = function(c){
+    const prices = {usd:[50,150,300],rub:[4900,14900,29900]};
+    const syms = {usd:'$',rub:'₽'};
+    const suf = {usd:'',rub:' ₽'};
+    document.getElementById('btn-usd').classList.toggle('active', c==='usd');
+    document.getElementById('btn-rub').classList.toggle('active', c==='rub');
+    [0,1,2].forEach(i=>{
+      const el = document.getElementById('amt-'+i);
+      if(!el) return;
+      const cur = el.querySelector('.cur');
+      const plus = el.querySelector('.amt-plus');
+      const txt = el.childNodes;
+      if(cur) cur.className = c==='rub' ? 'cur cur-suf' : 'cur';
+      el.innerHTML = c==='usd'
+        ? `<span class="cur">$</span>${prices.usd[i]}${i===2?'<span class="amt-plus">+</span>':''}`
+        : `${prices.rub[i]}<span class="cur cur-suf">₽</span>${i===2?'<span class="amt-plus">+</span>':''}`;
+    });
+  };
+
+  window.selectPlan = function(p){
+    const el = document.getElementById('cta-plan');
+    if(el) el.value = p;
+    const badge = document.getElementById('plan-badge');
+    if(badge){ badge.style.display='block'; badge.textContent='Выбран тариф: '+p; }
+  };
+
+  /* ---------- Alfa-Bank Acquiring ---------- */
+  const PAY_PLANS = {
+    'Базовый':  { amount: 149, amountKopecks: 14900 },
+    'Стандарт': { amount: 449, amountKopecks: 44900 },
+    'Продвинутый': { amount: 899, amountKopecks: 89900 }
+  };
+  let _activePlan = null;
+
+  window.openPayment = function(plan, amount) {
+    _activePlan = plan;
+    document.getElementById('pm-plan').textContent = plan;
+    document.getElementById('pm-amount').textContent = amount;
+    document.getElementById('pm-error').style.display = 'none';
+    document.getElementById('pm-loading').style.display = 'none';
+    document.getElementById('pay-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  window.closePayment = function() {
+    document.getElementById('pay-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
+  document.getElementById('pay-overlay').addEventListener('click', function(e){
+    if(e.target === this) closePayment();
+  });
+
+  window.processPayment = async function() {
+    if(!_activePlan) return;
+    const info = PAY_PLANS[_activePlan];
+    const errEl  = document.getElementById('pm-error');
+    const loadEl = document.getElementById('pm-loading');
+    errEl.style.display  = 'none';
+    loadEl.style.display = 'flex';
+
+    try {
+      /* POST /api/create-payment — Vercel serverless function (see api/create-payment.js)
+         В тестовой среде используется sandbox.alfabank.by */
+      const resp = await fetch('/api/create-payment', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          plan:        _activePlan,
+          amount:      info.amountKopecks,
+          orderNumber: 'KG-' + Date.now(),
+          description: 'KaliGEO — аудит видимости, тариф ' + _activePlan
+        })
+      });
+
+      if(!resp.ok) throw new Error('Сервис временно недоступен. Попробуйте чуть позже.');
+      const data = await resp.json();
+      if(data.errorCode) throw new Error(data.errorMessage || 'Ошибка создания заказа');
+
+      /* Перенаправляем на платёжную страницу Альфа-Банка */
+      window.location.href = data.formUrl;
+
+    } catch(err) {
+      loadEl.style.display = 'none';
+      errEl.textContent = '⚠ ' + (err.message || 'Ошибка соединения');
+      errEl.style.display = 'block';
+    }
+  };
+
+  /* Показываем баннер при возврате с платёжной страницы */
+  (function checkPaymentReturn(){
+    const p = new URLSearchParams(location.search);
+    const orderId = p.get('orderId');
+    const status  = p.get('paymentStatus'); // success | fail
+    if(!orderId) return;
+    const banner = document.getElementById('pay-banner');
+    if(status === 'success' || status === null){
+      banner.textContent = '✓ Оплата прошла успешно! Ждите письмо с подтверждением.';
+      banner.className = 'pay-banner ok';
+    } else {
+      banner.textContent = '✕ Оплата не прошла. Попробуйте ещё раз или напишите нам.';
+      banner.className = 'pay-banner fail';
+    }
+    setTimeout(() => banner.style.opacity = '0', 5000);
+    history.replaceState({}, '', location.pathname);
+  })();
+
   /* ---------- Interactive AI chat ---------- */
   const CHAT = [
     {
