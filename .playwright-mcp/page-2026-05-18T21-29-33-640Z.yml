@@ -1,0 +1,454 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "Kali GEO" [ref=e4] [cursor=pointer]:
+        - /url: "#"
+        - img [ref=e5]
+        - generic [ref=e10]: Kali
+        - generic [ref=e11]: GEO
+      - generic [ref=e12]:
+        - link "Проблема" [ref=e13] [cursor=pointer]:
+          - /url: "#problem"
+        - link "Как это работает" [ref=e14] [cursor=pointer]:
+          - /url: "#how"
+        - link "Тарифы" [ref=e15] [cursor=pointer]:
+          - /url: "#pricing"
+        - link "FAQ" [ref=e16] [cursor=pointer]:
+          - /url: "#faq"
+      - link "Заказать аудит →" [ref=e17] [cursor=pointer]:
+        - /url: "#cta"
+        - text: Заказать аудит
+        - generic [ref=e18]: →
+  - generic [ref=e21]:
+    - generic [ref=e22]:
+      - generic [ref=e23]: Алиса · YandexGPT · GigaChat · ChatGPT · DeepSeek · Perplexity
+      - heading "Ваши клиенты больше не «гуглят». Они спрашивают AI." [level=1] [ref=e25]:
+        - text: Ваши клиенты больше не «гуглят».
+        - emphasis [ref=e26]: Они спрашивают AI.
+      - paragraph [ref=e27]: Мы покажем, как ваш бизнес выглядит внутри ChatGPT, Perplexity, Google AI Overviews и других ответных машин, которым доверяют покупатели — чтобы вы перестали терять сделки, о которых даже не знали.
+      - generic [ref=e28]:
+        - link "Проверить видимость →" [ref=e29] [cursor=pointer]:
+          - /url: "#cta"
+          - text: Проверить видимость
+          - generic [ref=e30]: →
+        - link "Посмотреть пример отчёта" [ref=e31] [cursor=pointer]:
+          - /url: "#how"
+      - generic [ref=e32]:
+        - generic [ref=e33]: ✓ Срок — 48 часов
+        - generic [ref=e34]: ✓ Без подписки
+        - generic [ref=e35]: ✓ PDF + видеоразбор
+    - generic [ref=e36]:
+      - generic [ref=e38]:
+        - generic [ref=e39]: AI
+        - generic [ref=e40]: ChatGPT
+        - text: · живой запрос
+      - generic [ref=e46]:
+        - generic [ref=e47]: «Посоветуй бухгалтерское бюро для IT-стартапов в Москве»
+        - generic [ref=e48]:
+          - text: Чаще всего рекомендуют
+          - strong [ref=e49]: Ledgerwise
+          - generic [ref=e50]: "[1]"
+          - text: ","
+          - strong [ref=e51]: Северный Дуб
+          - generic [ref=e52]: "[2]"
+          - text: и
+          - strong [ref=e53]: Bluestem Advisors
+          - generic [ref=e54]: "[3]"
+          - text: . Все — под SaaS-стартапы раунда A–B…
+        - generic [ref=e55]:
+          - generic [ref=e56]: Ваша компания не упомянута.
+          - generic [ref=e57]: "видимость: 0 / 10"
+      - generic [ref=e59]:
+        - generic [ref=e60]:
+          - button [ref=e61] [cursor=pointer]
+          - button [ref=e62] [cursor=pointer]
+          - button [ref=e63] [cursor=pointer]
+          - button [ref=e64] [cursor=pointer]
+        - generic [ref=e65]: 01 / 04
+      - generic [ref=e66]: Это происходит прямо сейчас — на запросах, которые должны быть вашими.
+  - generic [ref=e68]:
+    - generic [ref=e69]: Проверяем видимость в
+    - generic [ref=e70]:
+      - generic [ref=e71]: ◐ Алиса AI
+      - generic [ref=e72]: ◑ YandexGPT
+      - generic [ref=e73]: ◒ GigaChat
+      - generic [ref=e74]: ◓ ChatGPT
+      - generic [ref=e75]: ◔ DeepSeek
+      - generic [ref=e76]: ◕ Perplexity
+      - generic [ref=e77]: ◖ Gemini
+      - generic [ref=e78]: ◗ Claude
+  - generic [ref=e80]:
+    - generic [ref=e81]:
+      - generic [ref=e82]: "01"
+      - text: Проблема
+    - heading "Поиск не умер. Он превратился в диалог." [level=2] [ref=e83]:
+      - text: Поиск не умер.
+      - text: Он превратился в диалог.
+    - paragraph [ref=e84]: Ваша SEO-стратегия построена на мире синих ссылок. Но покупатели больше не листают десять результатов — они читают один ответ. Если в этом ответе нет вас — сделка закончилась, так и не начавшись.
+    - generic [ref=e85]:
+      - generic [ref=e86]:
+        - generic [ref=e87]: 63%
+        - generic [ref=e88]: покупательских запросов сегодня начинаются или заканчиваются у AI-ассистента.
+        - generic [ref=e89]: — оценочный показатель
+      - generic [ref=e90]:
+        - generic [ref=e91]: 1/10
+        - generic [ref=e92]: малых и средних компаний AI сам называет, когда клиент просит посоветовать в их категории.
+        - generic [ref=e93]: — оценочный показатель
+      - generic [ref=e94]:
+        - generic [ref=e95]: 0%
+        - generic [ref=e96]: этих потерь вы увидите в Яндекс.Метрике или Google Analytics. Чат не оставляет следов.
+        - generic [ref=e97]: — наблюдение
+  - generic [ref=e99]:
+    - generic [ref=e100]:
+      - generic [ref=e101]: "02"
+      - text: Аудит
+    - heading "Детальный разбор того, как AI описывает вас — и кого советует вместо вас." [level=2] [ref=e102]:
+      - text: Детальный разбор того, как AI описывает вас —
+      - emphasis [ref=e103]: и кого советует вместо вас.
+    - generic [ref=e104]:
+      - generic [ref=e105]:
+        - generic [ref=e106]:
+          - generic [ref=e107]: А.01
+          - generic [ref=e108]:
+            - heading "Допрашиваем ответные машины" [level=4] [ref=e109]
+            - paragraph [ref=e110]: 50+ реальных запросов, которые задают ваши клиенты — в Алисе, YandexGPT, GigaChat, ChatGPT, DeepSeek, Perplexity, Gemini и Claude. Фиксируем каждый ответ, каждую цитату и каждое замалчивание.
+        - generic [ref=e111]:
+          - generic [ref=e112]: А.02
+          - generic [ref=e113]:
+            - heading "Сравниваем с конкурентами" [level=4] [ref=e114]
+            - paragraph [ref=e115]: Кого AI называет вместо вас? На какие источники он опирается в вашей категории? Строим карту цитирований и показываем разрыв.
+        - generic [ref=e116]:
+          - generic [ref=e117]: А.03
+          - generic [ref=e118]:
+            - heading "Находим слабые места" [level=4] [ref=e119]
+            - paragraph [ref=e120]: Отсутствующая разметка Schema, слабые сигналы сущности, мало отзывов, устаревшие данные, неверные цены. Всё, из-за чего AI ещё не доверяет вам.
+        - generic [ref=e121]:
+          - generic [ref=e122]: А.04
+          - generic [ref=e123]:
+            - heading "Даём план, а не гору данных" [level=4] [ref=e124]
+            - paragraph [ref=e125]: "Приоритизированные рекомендации: что починить на этой неделе, в этом месяце, в этом квартале — с ожидаемым эффектом и оценкой усилий. Без воды и без «возьмите нас на абонемент»."
+      - generic [ref=e126]:
+        - generic [ref=e127]:
+          - generic [ref=e128]: Отчёт по видимости · превью
+          - generic [ref=e129]: sample.ru
+        - generic [ref=e130]:
+          - generic [ref=e131]: 24/100
+          - generic [ref=e132]: ↓ 41 балл от лидера категории
+        - generic [ref=e133]:
+          - generic [ref=e134]:
+            - generic [ref=e135]: Алиса AI
+            - generic [ref=e138]: 14%
+          - generic [ref=e139]:
+            - generic [ref=e140]: YandexGPT
+            - generic [ref=e143]: 38%
+          - generic [ref=e144]:
+            - generic [ref=e145]: GigaChat
+            - generic [ref=e148]: 22%
+          - generic [ref=e149]:
+            - generic [ref=e150]: ChatGPT
+            - generic [ref=e153]: 18%
+          - generic [ref=e154]:
+            - generic [ref=e155]: Perplexity
+            - generic [ref=e158]: 42%
+          - generic [ref=e159]:
+            - generic [ref=e160]: Claude
+            - generic [ref=e163]: 61%
+        - generic [ref=e164]:
+          - generic [ref=e165]: 42 запроса · 17 конкурентов
+          - generic [ref=e166]: PDF · 28 страниц
+  - generic [ref=e168]:
+    - generic [ref=e169]:
+      - generic [ref=e170]: "03"
+      - text: Что вы получите
+    - heading "Четыре артефакта, никакой воды." [level=2] [ref=e171]:
+      - text: Четыре артефакта,
+      - emphasis [ref=e172]: никакой воды.
+    - generic [ref=e173]:
+      - generic [ref=e174]:
+        - generic [ref=e175]:
+          - generic [ref=e176]: ◐
+          - heading "Отчёт о видимости" [level=4] [ref=e177]
+          - paragraph [ref=e178]: Балл видимости по каждой платформе, частота упоминаний, тональность и источники цитирования. PDF и интерактивная ссылка.
+        - generic [ref=e179]: 01 · 28 стр.
+      - generic [ref=e180]:
+        - generic [ref=e181]:
+          - generic [ref=e182]: ⇄
+          - heading "Матрица конкурентов" [level=4] [ref=e183]
+          - paragraph [ref=e184]: Кого AI называет вместо вас, почему и на каких запросах. Разрыв — по пунктам.
+        - generic [ref=e185]: 02 · топ-10
+      - generic [ref=e186]:
+        - generic [ref=e187]:
+          - generic [ref=e188]: ⚠
+          - heading "Аудит слабых мест" [level=4] [ref=e189]
+          - paragraph [ref=e190]: Schema, отзывы, сигналы сущности, авторитет источников, устаревшие факты — всё, что мешает AI вам доверять.
+        - generic [ref=e191]: 03 · чек-лист
+      - generic [ref=e192]:
+        - generic [ref=e193]:
+          - generic [ref=e194]: ↗
+          - heading "План роста" [level=4] [ref=e195]
+          - paragraph [ref=e196]: Приоритизированные действия на 30/60/90 дней с ожидаемым приростом видимости и оценкой усилий. Готово для команды.
+        - generic [ref=e197]: 04 · план
+  - generic [ref=e199]:
+    - generic [ref=e200]:
+      - generic [ref=e201]: "04"
+      - text: Как это работает
+    - heading "От заявки до стратегии — меньше недели." [level=2] [ref=e202]:
+      - text: От заявки до стратегии —
+      - emphasis [ref=e203]: меньше недели.
+    - generic [ref=e204]:
+      - generic [ref=e205]:
+        - generic [ref=e206]: "01"
+        - heading "Оставляете заявку" [level=4] [ref=e207]
+        - paragraph [ref=e208]: "Форма на 4 минуты: сайт, категория, целевые клиенты, 5 конкурентов."
+        - generic [ref=e209]: ~ 4 мин
+      - generic [ref=e210]:
+        - generic [ref=e211]: "02"
+        - heading "Мы проводим аудит" [level=4] [ref=e212]
+        - paragraph [ref=e213]: 50+ запросов в 6 AI-платформах. Каждый ответ зафиксирован, каждая цитата записана.
+        - generic [ref=e214]: 48 часов
+      - generic [ref=e215]:
+        - generic [ref=e216]: "03"
+        - heading "Получаете отчёт" [level=4] [ref=e217]
+        - paragraph [ref=e218]: PDF + интерактивный дашборд + 15-минутный видеоразбор от живого человека.
+        - generic [ref=e219]: день 3
+      - generic [ref=e220]:
+        - generic [ref=e221]: "04"
+        - heading "Внедрение (по желанию)" [level=4] [ref=e222]
+        - paragraph [ref=e223]: Передайте план своей команде или пусть внедрит наша. Фиксированная стоимость.
+        - generic [ref=e224]: опционально
+  - generic [ref=e226]:
+    - generic [ref=e227]:
+      - generic [ref=e228]: "05"
+      - text: Доверие
+    - heading "Компании, которых мы вытащили из слепой зоны." [level=2] [ref=e229]:
+      - text: Компании, которых мы
+      - emphasis [ref=e230]: вытащили из слепой зоны.
+    - generic [ref=e231]:
+      - generic [ref=e232]:
+        - generic [ref=e233]: «Мы были уверены, что в нашей нише — очевидный выбор. ChatGPT считал иначе — он советовал трёх конкурентов, о которых мы даже не слышали. Через шесть недель после аудита мы были первой цитатой в Perplexity по главному запросу.»
+        - generic [ref=e234]:
+          - generic [ref=e235]: МР
+          - generic [ref=e236]:
+            - generic [ref=e237]: Мария Романова
+            - generic [ref=e238]: Основатель · Северный Бухгалтер
+      - generic [ref=e239]:
+        - generic [ref=e240]: «Лучшие 9000 ₽ на маркетинг в этом году.»
+        - generic [ref=e241]:
+          - generic [ref=e242]: ДК
+          - generic [ref=e243]:
+            - generic [ref=e244]: Денис Ковалёв
+            - generic [ref=e245]: Head of Growth · Brickhaus DTC
+      - generic [ref=e246]:
+        - generic [ref=e247]: «Наконец-то кто-то объяснил AI-поиск, не втягивая в абонемент.»
+        - generic [ref=e248]:
+          - generic [ref=e249]: ЛА
+          - generic [ref=e250]:
+            - generic [ref=e251]: Лилия Андреева
+            - generic [ref=e252]: Владелица · Four Cardinals Studio
+      - generic [ref=e253]:
+        - generic [ref=e254]:
+          - generic [ref=e255]: Кейс · бутик-юрфирма, Санкт-Петербург
+          - heading "Из «невидимых» в цитируемые за 42 дня." [level=4] [ref=e256]
+          - paragraph [ref=e257]: "После аудита: структурированная FAQ-разметка, три публикации в авторитетных каталогах и чистка отзывов."
+        - generic [ref=e258]:
+          - generic [ref=e259]:
+            - generic [ref=e260]: До
+            - generic [ref=e261]: 0%
+            - generic [ref=e262]: Ни одной цитаты в AI
+          - generic [ref=e263]:
+            - generic [ref=e264]: После 42 дней
+            - generic [ref=e265]: 73%
+            - generic [ref=e266]: Цитируется в Алисе, YandexGPT и ChatGPT
+  - generic [ref=e268]:
+    - generic [ref=e269]:
+      - generic [ref=e270]: "06"
+      - text: Тарифы
+    - heading "Разовые аудиты, без подписки и абонементов." [level=2] [ref=e271]:
+      - text: Разовые аудиты,
+      - emphasis [ref=e272]: без подписки и абонементов.
+    - paragraph [ref=e273]:
+      - text: Выбирайте глубину под ставку. Любой тариф — за 48 часов, с последующим звонком через 14 дней.
+      - generic [ref=e274]:
+        - button "$" [ref=e275] [cursor=pointer]
+        - button "₽" [ref=e276] [cursor=pointer]
+    - generic [ref=e277]:
+      - generic [ref=e278]:
+        - generic [ref=e279]: Базовый
+        - generic [ref=e280]: $50
+        - generic [ref=e281]: Быстрая проверка одной ниши. Пригодится до того, как вкладываться в SEO.
+        - list [ref=e282]:
+          - listitem [ref=e283]: → 15 запросов · 3 AI-платформы
+          - listitem [ref=e284]: → Балл видимости и топ-3 конкурента
+          - listitem [ref=e285]: → PDF-отчёт на 6 страниц
+          - listitem [ref=e286]: → Без созвона и без плана
+        - generic [ref=e287]:
+          - link "Оставить заявку" [ref=e288] [cursor=pointer]:
+            - /url: "#cta"
+          - button "💳 Оплатить 149 BYN" [ref=e289] [cursor=pointer]
+      - generic [ref=e290]:
+        - generic [ref=e291]: Выбор большинства
+        - generic [ref=e292]: Стандарт
+        - generic [ref=e293]: $150
+        - generic [ref=e294]: "Полная картина: что AI говорит, кого называет вместо и что с этим делать."
+        - list [ref=e295]:
+          - listitem [ref=e296]: → 50 запросов · 6 AI-платформ
+          - listitem [ref=e297]: → Матрица из 10 конкурентов
+          - listitem [ref=e298]: → PDF на 28 страниц + интерактив
+          - listitem [ref=e299]: → Видеоразбор 15 минут
+          - listitem [ref=e300]: → План роста на 30 дней
+        - generic [ref=e301]:
+          - link "Оставить заявку →" [ref=e302] [cursor=pointer]:
+            - /url: "#cta"
+            - text: Оставить заявку
+            - generic [ref=e303]: →
+          - button "💳 Оплатить 449 BYN" [ref=e304] [cursor=pointer]
+      - generic [ref=e305]:
+        - generic [ref=e306]: Продвинутый
+        - generic [ref=e307]: $300+
+        - generic [ref=e308]: Для команд, готовых выиграть категорию. Работаем вместе с вами, а не вместо.
+        - list [ref=e309]:
+          - listitem [ref=e310]: → 150+ запросов · все платформы
+          - listitem [ref=e311]: → Мультирынок / несколько языков
+          - listitem [ref=e312]: → Глубокий анализ сущностей и Schema
+          - listitem [ref=e313]: → План на 90 дней + 30-мин стратсессия
+          - listitem [ref=e314]: → Смета на внедрение (опция)
+        - generic [ref=e315]:
+          - link "Оставить заявку" [ref=e316] [cursor=pointer]:
+            - /url: "#cta"
+          - button "💳 Оплатить 899 BYN" [ref=e317] [cursor=pointer]
+  - generic [ref=e319]:
+    - generic [ref=e320]: Принимаем к оплате
+    - generic [ref=e321]:
+      - img "Visa" [ref=e322]:
+        - generic [ref=e324]: VISA
+      - img "Visa Secure" [ref=e325]:
+        - generic [ref=e328]: V
+        - generic [ref=e329]: SECURE
+      - img "Mastercard" [ref=e330]
+      - img "Mastercard ID Check" [ref=e335]:
+        - generic [ref=e338]: ID
+        - generic [ref=e339]: ID CHECK
+      - img "Белкарт" [ref=e340]:
+        - generic [ref=e344]: БЕЛКАРТ
+        - generic [ref=e345]: ІНТЭРНЭТ-ПАРОЛЬ
+      - img "Apple Pay" [ref=e346]:
+        - generic [ref=e350]: Pay
+      - img "Samsung Pay" [ref=e351]:
+        - generic [ref=e353]: SAMSUNG
+        - generic [ref=e354]: Pay
+      - img "Альфа-Банк" [ref=e355]:
+        - generic [ref=e357]: АЛЬФА-БАНК
+        - generic [ref=e358]: А
+    - generic [ref=e359]:
+      - img [ref=e360]
+      - text: Защищённая оплата · SSL
+  - generic [ref=e365]:
+    - generic [ref=e366]:
+      - generic [ref=e367]:
+        - generic [ref=e368]: "07"
+        - text: Последнее
+      - heading "Узнайте, что AI говорит про вас, раньше, чем это узнает конкурент ." [level=2] [ref=e369]:
+        - text: Узнайте, что AI говорит
+        - text: про вас,
+        - emphasis [ref=e370]:
+          - text: раньше, чем это
+          - generic [ref=e371]: узнает конкурент
+          - text: .
+    - generic [ref=e372]:
+      - generic [ref=e375]:
+        - text: "Ранний поток:"
+        - generic [ref=e376]: осталось 17 слотов
+        - text: в этом месяце.
+      - generic [ref=e377]:
+        - generic [ref=e378]:
+          - generic [ref=e379]:
+            - generic [ref=e380]: Имя / компания
+            - textbox "Имя / компания" [ref=e381]:
+              - /placeholder: ООО «Ромашка»
+          - generic [ref=e382]:
+            - generic [ref=e383]: Сайт
+            - textbox "Сайт" [ref=e384]:
+              - /placeholder: https://example.ru
+        - generic [ref=e385]:
+          - generic [ref=e386]:
+            - generic [ref=e387]: Email
+            - textbox "Email" [ref=e388]:
+              - /placeholder: вы@компания.ru
+          - generic [ref=e389]:
+            - generic [ref=e390]: Телефон
+            - textbox "Телефон" [ref=e391]:
+              - /placeholder: +7 900 000-00-00
+        - button "Получить аудит →" [ref=e393] [cursor=pointer]:
+          - text: Получить аудит
+          - generic [ref=e394]: →
+        - generic [ref=e395]: Без карты. Подтверждение придёт в течение часа.
+  - generic [ref=e398]:
+    - generic [ref=e399]:
+      - generic [ref=e400]:
+        - generic [ref=e401]: "08"
+        - text: FAQ
+      - heading "Типичные возражения — и ответы." [level=2] [ref=e402]:
+        - text: Типичные
+        - emphasis [ref=e403]: возражения
+        - text: — и ответы.
+      - paragraph [ref=e404]:
+        - text: Чего-то не хватает? Напишите на
+        - link "hello@kaligeo.ru" [ref=e405] [cursor=pointer]:
+          - /url: mailto:hello@kaligeo.ru
+        - text: — живой человек ответит в течение дня.
+    - generic [ref=e406]:
+      - group [ref=e407] [cursor=pointer]:
+        - generic "Что вообще такое «AI-поиск»? +" [ref=e408]:
+          - text: Что вообще такое «AI-поиск»?
+          - generic [ref=e409]: +
+        - generic [ref=e410]: AI-поиск — это когда пользователь спрашивает у разговорного AI (ChatGPT, Perplexity, Google AI Overviews, Gemini, Claude, Copilot, Алиса) совет, сравнение или ответ — вместо того чтобы вводить ключевые слова в Google или Яндекс. Эти сервисы отдают один готовый ответ (часто с цитатами), а не список синих ссылок. Если вас нет в ответе — вас для клиента не существует.
+      - group [ref=e411] [cursor=pointer]:
+        - generic "Зачем мне это, если SEO и так в порядке? +" [ref=e412]:
+          - text: Зачем мне это, если SEO и так в порядке?
+          - generic [ref=e413]: +
+      - group [ref=e414] [cursor=pointer]:
+        - generic "Как быстро увижу результат? +" [ref=e415]:
+          - text: Как быстро увижу результат?
+          - generic [ref=e416]: +
+      - group [ref=e417] [cursor=pointer]:
+        - generic "Подходит ли это моей нише? +" [ref=e418]:
+          - text: Подходит ли это моей нише?
+          - generic [ref=e419]: +
+      - group [ref=e420] [cursor=pointer]:
+        - generic "Нужно ли быть технарём? +" [ref=e421]:
+          - text: Нужно ли быть технарём?
+          - generic [ref=e422]: +
+      - group [ref=e423] [cursor=pointer]:
+        - generic "А внедрить вы тоже можете? +" [ref=e424]:
+          - text: А внедрить вы тоже можете?
+          - generic [ref=e425]: +
+  - contentinfo [ref=e426]:
+    - generic [ref=e427]:
+      - generic [ref=e428]:
+        - img [ref=e429]
+        - generic [ref=e434]: Kali
+        - generic [ref=e435]: GEO
+      - generic [ref=e436]: © 2026 KaliGEO. Все упомянутые бренды принадлежат их владельцам.
+      - generic [ref=e437]:
+        - link "Правила оплаты" [ref=e438] [cursor=pointer]:
+          - /url: "#payment-rules"
+        - link "Конфиденциальность" [ref=e439] [cursor=pointer]:
+          - /url: "#privacy"
+        - link "Возврат" [ref=e440] [cursor=pointer]:
+          - /url: "#returns"
+        - link "Контакты" [ref=e441] [cursor=pointer]:
+          - /url: "#cta"
+    - generic [ref=e443]:
+      - strong [ref=e444]: "Реквизиты продавца:"
+      - text: "ООО «KaliGEO» · Республика Беларусь, г. Минск, ул. Независимости, 1 · УНП 000000000 · Тел.: +375 (29) 000-00-00 · Email: hello@kaligeo.by · Регистрационное свидетельство № 0000000000, выдано исполнительным комитетом г. Минска. Вид деятельности лицензированию не подлежит."
+      - generic [ref=e445]:
+        - link "Правила оплаты и безопасность" [ref=e446] [cursor=pointer]:
+          - /url: "#payment-rules"
+        - link "Политика конфиденциальности" [ref=e447] [cursor=pointer]:
+          - /url: "#privacy"
+        - link "Правила возврата" [ref=e448] [cursor=pointer]:
+          - /url: "#returns"
+        - link "Порядок оказания услуг" [ref=e449] [cursor=pointer]:
+          - /url: "#delivery"
+        - link "Правила МПС Visa" [ref=e450] [cursor=pointer]:
+          - /url: https://www.alfabank.by/upload/docs/bank/pravila-oplati.pdf
