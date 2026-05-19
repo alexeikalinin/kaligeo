@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0F1115"/>
+
+  <!-- Radar rings (right side) -->
+  <circle cx="960" cy="315" r="260" fill="none" stroke="#1A1E28" stroke-width="1"/>
+  <circle cx="960" cy="315" r="190" fill="none" stroke="#1A1E28" stroke-width="1"/>
+  <circle cx="960" cy="315" r="120" fill="none" stroke="#222730" stroke-width="1"/>
+  <circle cx="960" cy="315" r="50"  fill="none" stroke="#2A3040" stroke-width="1"/>
+  <line x1="960" y1="55"  x2="960" y2="575" stroke="#181C26" stroke-width="1"/>
+  <line x1="700" y1="315" x2="1200" y2="315" stroke="#181C26" stroke-width="1"/>
+
+  <!-- Target dot -->
+  <circle cx="960" cy="315" r="14" fill="none" stroke="#C8F24A" stroke-width="2"/>
+  <circle cx="960" cy="315" r="5"  fill="#C8F24A"/>
+  <circle cx="960" cy="125" r="4"  fill="#C8F24A" opacity="0.6"/>
+  <circle cx="1150" cy="315" r="3" fill="#C8F24A" opacity="0.4"/>
+
+  <!-- Bottom accent line -->
+  <rect x="0" y="622" width="1200" height="8" fill="#C8F24A"/>
+
+  <!-- Logo mark -->
+  <rect x="64" y="56" width="52" height="52" rx="11" fill="#0F1115" stroke="#2A2D35" stroke-width="1.5"/>
+  <path d="M80 68 L80 96 M80 82 L93 68 M80 82 L93 96" stroke="#FAFAF7" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <circle cx="103" cy="82" r="9" stroke="#C8F24A" stroke-width="2.2" fill="none"/>
+  <circle cx="103" cy="82" r="3" fill="#C8F24A"/>
+
+  <!-- Brand name -->
+  <text x="130" y="94" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#FAFAF7" letter-spacing="-0.5">Kali</text>
+  <rect x="172" y="73" width="54" height="28" rx="7" fill="#C8F24A"/>
+  <text x="181" y="93" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#0F1115" letter-spacing="0.5">GEO</text>
+
+  <!-- Tag line -->
+  <rect x="64" y="152" width="330" height="36" rx="18" fill="#1C2030" stroke="#2A2D35" stroke-width="1"/>
+  <circle cx="88" cy="170" r="5" fill="#C8F24A"/>
+  <text x="102" y="175" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#9CA3AF" letter-spacing="0.3">GEO · AI Visibility Audit</text>
+
+  <!-- Main headline line 1 -->
+  <text x="64" y="280" font-family="Arial, sans-serif" font-size="72" font-weight="700" fill="#FAFAF7" letter-spacing="-2.5">Аудит видимости</text>
+
+  <!-- Main headline line 2 -->
+  <text x="64" y="365" font-family="Arial, sans-serif" font-size="72" font-weight="700" fill="#FAFAF7" letter-spacing="-2.5">бизнеса в</text>
+
+  <!-- AI-поиске with accent color — separate text element, no background rect -->
+  <text x="64" y="450" font-family="Arial, sans-serif" font-size="72" font-weight="700" fill="#C8F24A" letter-spacing="-2.5">AI-поиске</text>
+
+  <!-- Platforms -->
+  <text x="64" y="502" font-family="Arial, sans-serif" font-size="18" fill="#4B5563" letter-spacing="-0.2">ChatGPT · Perplexity · Алиса · GigaChat · Gemini · DeepSeek</text>
+
+  <!-- CTA badge -->
+  <rect x="64" y="526" width="236" height="44" rx="22" fill="#1C2030" stroke="#2A2D35" stroke-width="1"/>
+  <text x="84" y="554" font-family="Arial, sans-serif" font-size="15" font-weight="600" fill="#FAFAF7">Отчёт за 48 часов →</text>
+
+  <!-- URL -->
+  <text x="64" y="606" font-family="Arial, sans-serif" font-size="16" fill="#374151" letter-spacing="0.5">kaligeo.ru</text>
+</svg>
