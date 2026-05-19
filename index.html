@@ -1898,7 +1898,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       if(!el) return;
       const plus = i===2?'<span class="amt-plus">+</span>':'';
       if(c==='usd') el.innerHTML = `<span class="cur">$</span>${prices.usd[i]}${plus}`;
-      else if(c==='byn') el.innerHTML = `${prices.byn[i]}<span class="cur cur-suf">Br</span>${plus}`;
+      else if(c==='byn') el.innerHTML = `${prices.byn[i]}<span class="cur cur-suf">BYN</span>${plus}`;
       else el.innerHTML = `${prices.rub[i]}<span class="cur cur-suf">₽</span>${plus}`;
     });
   };
@@ -2243,9 +2243,9 @@ const PRICES = {
     '<span class="cur">$</span>300<span class="amt-plus">+</span>'
   ],
   byn: [
-    '149<span class="cur cur-suf">Br</span>',
-    '449<span class="cur cur-suf">Br</span>',
-    '899<span class="cur cur-suf">Br</span><span class="amt-plus">+</span>'
+    '149<span class="cur cur-suf">BYN</span>',
+    '449<span class="cur cur-suf">BYN</span>',
+    '899<span class="cur cur-suf">BYN</span><span class="amt-plus">+</span>'
   ],
   rub: [
     '4&nbsp;900<span class="cur cur-suf">₽</span>',
@@ -2255,7 +2255,7 @@ const PRICES = {
 };
 const PLAN_LABELS = {
   usd: ['Базовый ($50)', 'Стандарт ($150)', 'Продвинутый ($300+)'],
-  byn: ['Базовый (149 Br)', 'Стандарт (449 Br)', 'Продвинутый (899 Br+)'],
+  byn: ['Базовый (149 BYN)','Стандарт (449 BYN)','Продвинутый (899 BYN+)'],
   rub: ['Базовый (4 900 ₽)', 'Стандарт (14 900 ₽)', 'Продвинутый (29 900 ₽+)']
 };
 
