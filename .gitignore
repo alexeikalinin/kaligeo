@@ -1,1 +1,5 @@
 .DS_Store
+
+# Dev artifacts
+.playwright-mcp/
+excalidraw.log
