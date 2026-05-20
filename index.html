@@ -595,6 +595,12 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   .glos-item{padding:24px 28px;border-left:3px solid var(--accent);background:var(--card);border-radius:0 12px 12px 0;border:1px solid var(--rule);border-left:3px solid var(--accent)}
   .glos-item dt{font-size:15px;font-weight:600;letter-spacing:-0.015em;margin-bottom:8px;color:var(--ink)}
   .glos-item dd{font-size:14px;color:var(--ink-2);line-height:1.65;margin:0}
+
+  @media(max-width:640px){
+    .method-grid{grid-template-columns:1fr!important}
+    .glossary-grid{grid-template-columns:1fr!important}
+    .wrap{padding:0 20px}
+  }
 </style>
 <script type="application/ld+json">
 {
