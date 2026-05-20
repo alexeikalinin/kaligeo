@@ -121,12 +121,13 @@
   .annotate::before{content:"";position:absolute;left:-6px;top:18px;width:12px;height:12px;background:var(--ink);transform:rotate(45deg)}
 
   .logos{padding:28px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-  .logos .wrap{display:flex;align-items:center;gap:48px;flex-wrap:wrap;justify-content:space-between}
+  .logos .wrap{display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center}
   .logos .label{font-size:12px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.08em;font-weight:500}
-  .logos .items{display:flex;gap:36px;flex-wrap:wrap;color:var(--ink-2);font-weight:500;font-size:14px;opacity:.8}
+  .logos .items{display:flex;gap:28px;flex-wrap:wrap;color:var(--ink-2);font-weight:500;font-size:14px;opacity:.8;justify-content:center;align-items:center}
   .logos .items span{display:inline-flex;align-items:center;gap:7px}
-  .ai-badge{width:20px;height:20px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+  .ai-badge{width:22px;height:22px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden}
   .ai-badge svg{display:block}
+  .ai-badge img{width:100%;height:100%;object-fit:contain}
 
   section{padding:104px 0}
   .eyebrow{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:500;color:var(--ink-2);text-transform:uppercase;letter-spacing:.1em}
@@ -792,59 +793,68 @@
   <div class="wrap">
     <div class="label">Проверяем видимость в</div>
     <div class="items">
-      <!-- Алиса AI — фиолетовый градиент -->
+      <!-- Алиса AI -->
       <span>
-        <span class="ai-badge" style="background:linear-gradient(135deg,#8B5CF6,#C026D3);border-radius:50%">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 3C8 3 5 6 5 9c0 2 1 3.5 2.5 4.5L6 21h12l-1.5-7.5C18 12.5 19 11 19 9c0-3-3-6-7-6z" fill="white" opacity=".9"/><circle cx="9" cy="9" r="1.5" fill="white"/><circle cx="15" cy="9" r="1.5" fill="white"/></svg>
+        <span class="ai-badge" style="background:#fff;border:1.5px solid #E8E8E8;border-radius:6px;padding:1px">
+          <svg width="18" height="18" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="8" fill="#FC3F1D"/><text x="20" y="28" font-family="Arial,sans-serif" font-size="22" font-weight="900" fill="white" text-anchor="middle">Я</text></svg>
         </span>
         Алиса AI
       </span>
-      <!-- YandexGPT — красный Я -->
+      <!-- YandexGPT -->
       <span>
-        <span class="ai-badge" style="background:#FC3F1D;border-radius:6px;color:#fff;font-weight:800;font-size:13px;font-family:Arial,sans-serif">Я</span>
+        <span class="ai-badge" style="background:#FC3F1D;border-radius:6px">
+          <svg width="14" height="14" viewBox="0 0 40 40" fill="none"><text x="20" y="29" font-family="Arial,sans-serif" font-size="26" font-weight="900" fill="white" text-anchor="middle">Я</text></svg>
+        </span>
         YandexGPT
       </span>
-      <!-- GigaChat — Сбер зелёный -->
+      <!-- GigaChat -->
       <span>
-        <span class="ai-badge" style="background:#21A038;border-radius:50%">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm-3 10H7V10h10v2zm0-4H7V6h10v2z"/></svg>
+        <span class="ai-badge" style="background:#fff;border:1.5px solid #E8E8E8;border-radius:6px">
+          <svg width="18" height="18" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#21A038"/><path d="M20 8C13.4 8 8 13.4 8 20s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 4a8 8 0 1 1 0 16 8 8 0 0 1 0-16zm0 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10z" fill="white"/></svg>
         </span>
         GigaChat
       </span>
-      <!-- ChatGPT — OpenAI зелёный -->
+      <!-- ChatGPT -->
       <span>
-        <span class="ai-badge" style="background:#10A37F;border-radius:6px">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M22.3 9.8a5.9 5.9 0 0 0-.5-4.8 6 6 0 0 0-6.4-2.8A5.9 5.9 0 0 0 11 .5 6 6 0 0 0 5.4 4.6a5.9 5.9 0 0 0-3.9 2.8 6 6 0 0 0 .7 7 5.9 5.9 0 0 0 .5 4.8 6 6 0 0 0 6.4 2.8A5.9 5.9 0 0 0 13 23.5 6 6 0 0 0 18.6 19.4a5.9 5.9 0 0 0 3.9-2.8 6 6 0 0 0-.7-6.8zm-9.3 13a4.5 4.5 0 0 1-2.8-1l.1-.1 4.7-2.7a.8.8 0 0 0 .4-.7V12l2 1.1v5.5A4.5 4.5 0 0 1 13 22.8zm-9.5-4.1a4.5 4.5 0 0 1-.5-3l.1.1 4.7 2.7a.8.8 0 0 0 .8 0l5.7-3.3v2.3l-4.7 2.7a4.5 4.5 0 0 1-6.1-1.5zM2.4 7.9A4.5 4.5 0 0 1 4.7 5.8v5.5a.8.8 0 0 0 .4.7l5.7 3.3-2 1.1a.1.1 0 0 1-.1 0L4.1 13.8A4.5 4.5 0 0 1 2.4 7.9zm16 8.2-5.7-3.3 2-1.1h.1l4.6 2.7a4.5 4.5 0 0 1-.7 8v-5.6a.8.8 0 0 0-.3-.7zm2-3L18.3 12l2-1.1v-.1l4.7 2.7a4.5 4.5 0 0 1-.7 7.9V16a.1.1 0 0 0 0-.1v-2.8zm-11.9 2.8L6.5 14.7a.1.1 0 0 1 0-.1V6.2a4.5 4.5 0 0 1 7.3-3.4v.1l-4.7 2.7a.8.8 0 0 0-.4.7v6.6zm1.1-2.3 2.5-1.5 2.5 1.4v2.9L12 18l-2.5-1.5v-2.6z"/></svg>
+        <span class="ai-badge" style="background:#000;border-radius:6px">
+          <svg width="14" height="14" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M37.532 16.87a9.963 9.963 0 0 0-.856-8.184 10.078 10.078 0 0 0-10.855-4.835 9.964 9.964 0 0 0-7.505-3.360 10.079 10.079 0 0 0-9.612 6.977 9.967 9.967 0 0 0-6.664 4.834 10.08 10.08 0 0 0 1.24 11.817 9.965 9.965 0 0 0 .856 8.185 10.079 10.079 0 0 0 10.855 4.835 9.965 9.965 0 0 0 7.504 3.36 10.079 10.079 0 0 0 9.617-6.981 9.967 9.967 0 0 0 6.663-4.834 10.079 10.079 0 0 0-1.243-11.813zM22.498 37.886a7.474 7.474 0 0 1-4.799-1.735c.061-.033.168-.091.237-.134l7.964-4.6a1.294 1.294 0 0 0 .655-1.134V19.054l3.366 1.944a.12.12 0 0 1 .066.092v9.299a7.505 7.505 0 0 1-7.49 7.496zM6.392 31.006a7.471 7.471 0 0 1-.894-5.023c.06.036.162.099.237.141l7.964 4.6a1.297 1.297 0 0 0 1.308 0l9.724-5.614v3.888a.12.12 0 0 1-.048.103L16.759 33.9a7.505 7.505 0 0 1-10.368-2.894zm-2.411-17.443a7.47 7.47 0 0 1 3.905-3.281c0 .068-.004.19-.004.274v9.201a1.294 1.294 0 0 0 .654 1.132l9.723 5.614-3.366 1.944a.12.12 0 0 1-.114.012L7.044 23.86a7.504 7.504 0 0 1-3.063-10.297zm27.658 6.437l-9.724-5.615 3.367-1.943a.121.121 0 0 1 .114-.012l7.857 4.534a7.504 7.504 0 0 1-1.158 13.528v-9.476a1.293 1.293 0 0 0-.456-1.016zm3.35-5.043c-.059-.037-.162-.099-.236-.141l-7.965-4.6a1.298 1.298 0 0 0-1.308 0l-9.723 5.614v-3.888a.12.12 0 0 1 .048-.103l7.924-4.573a7.505 7.505 0 0 1 11.26 7.690zm-21.063 6.929l-3.367-1.944a.12.12 0 0 1-.065-.092v-9.299a7.505 7.505 0 0 1 12.293-5.756c-.061.033-.168.091-.237.134l-7.965 4.6a1.294 1.294 0 0 0-.654 1.132l-.005 11.225zm1.829-3.943l4.33-2.501 4.332 2.497v4.998l-4.331 2.500-4.331-2.500V18.943z" fill="white"/></svg>
         </span>
         ChatGPT
       </span>
-      <!-- DeepSeek — синий -->
+      <!-- DeepSeek -->
       <span>
-        <span class="ai-badge" style="background:#1C4DE3;border-radius:8px">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 3a7 7 0 1 1-7 7 7 7 0 0 1 7-7z" opacity=".4"/><path d="M12 7c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/></svg>
+        <span class="ai-badge" style="background:#fff;border:1.5px solid #E8E8E8;border-radius:6px">
+          <svg width="18" height="18" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#1C4DE3"/><circle cx="14" cy="20" r="5" fill="none" stroke="white" stroke-width="2.5"/><circle cx="26" cy="20" r="5" fill="none" stroke="white" stroke-width="2.5"/><circle cx="14" cy="20" r="2" fill="white"/><path d="M19 20h2" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
         </span>
         DeepSeek
       </span>
-      <!-- Perplexity — бирюзовый -->
+      <!-- Perplexity -->
       <span>
-        <span class="ai-badge" style="background:#20808D;border-radius:50%">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M12 2v20M2 12h20M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg>
+        <span class="ai-badge" style="background:#fff;border:1.5px solid #E8E8E8;border-radius:6px">
+          <svg width="18" height="18" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#1A1A1A"/><path d="M20 6v28M6 20h28M9.4 9.4l21.2 21.2M30.6 9.4 9.4 30.6" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg>
         </span>
         Perplexity
       </span>
-      <!-- Gemini — Google градиент -->
+      <!-- Gemini -->
       <span>
-        <span class="ai-badge" style="background:linear-gradient(135deg,#4285F4 0%,#9B5DE5 50%,#EA4335 100%);border-radius:50%">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M12 2C12 2 9 8 9 12s3 10 3 10 3-4 3-10-3-10-3-10z" opacity=".9"/><path d="M2 12c0 0 6-3 10-3s10 3 10 3-4 3-10 3S2 12 2 12z" opacity=".7"/></svg>
+        <span class="ai-badge" style="background:#fff;border:1.5px solid #E8E8E8;border-radius:6px">
+          <svg width="18" height="18" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="white"/><path d="M20 4C20 4 15 14 15 20s5 16 5 16 5-6 5-16S20 4 20 4z" fill="url(#g1)"/><path d="M4 20c0 0 10-5 16-5s16 5 16 5-6 5-16 5S4 20 4 20z" fill="url(#g2)" opacity=".8"/><defs><linearGradient id="g1" x1="20" y1="4" x2="20" y2="36" gradientUnits="userSpaceOnUse"><stop stop-color="#4285F4"/><stop offset=".5" stop-color="#9B5DE5"/><stop offset="1" stop-color="#EA4335"/></linearGradient><linearGradient id="g2" x1="4" y1="20" x2="36" y2="20" gradientUnits="userSpaceOnUse"><stop stop-color="#34A853"/><stop offset="1" stop-color="#4285F4"/></linearGradient></defs></svg>
         </span>
         Gemini
       </span>
-      <!-- Claude — Anthropic терракота -->
+      <!-- Claude -->
       <span>
-        <span class="ai-badge" style="background:#CC785C;border-radius:6px">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M12 3L4 20h3.5l1.5-4h6l1.5 4H20L12 3zm0 4.5L14.5 14h-5L12 7.5z"/></svg>
+        <span class="ai-badge" style="background:#DA7756;border-radius:6px">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.516 19.121L8.994 6.879h2.26l4.229 12.242h-2.121l-.998-3.076H7.613l-.998 3.076H4.516zm3.762-4.885h3.445l-1.689-5.195h-.068L8.278 14.236z" fill="white"/></svg>
         </span>
         Claude
+      </span>
+      <!-- Grok -->
+      <span>
+        <span class="ai-badge" style="background:#000;border-radius:6px">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 3l7.5 9L3 21h2.5l6-7.2 6 7.2H21l-7.5-9L21 3h-2.5l-6 7.2L6.5 3H3z" fill="white"/></svg>
+        </span>
+        Grok
       </span>
     </div>
   </div>
