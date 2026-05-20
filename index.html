@@ -2245,7 +2245,7 @@ window.setCurrency = function(cur) {
   try {
     const res = await fetch('https://ipapi.co/country_code/', { signal: AbortSignal.timeout(3000) });
     const code = (await res.text()).trim();
-    window.setCurrency(code === 'RU' ? 'rub' : code === 'BY' ? 'byn' : 'usd');
+    window.setCurrency(code === 'RU' ? 'rub' : code === 'US' ? 'usd' : 'byn');
   } catch {
     window.setCurrency('byn');
   }
