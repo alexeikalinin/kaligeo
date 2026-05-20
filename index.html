@@ -142,6 +142,7 @@
   .problem .eyebrow::before{background:var(--accent)}
   .problem .eyebrow .num{color:#8A8D95}
   .problem h2{color:var(--bg)}
+  .problem h2 em{color:var(--accent);font-style:italic}
   .problem .lede{color:#C6C8CE}
   .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:72px;border-top:1px solid #2A2D35}
   .stat{padding:36px 28px 36px 0}
@@ -221,11 +222,11 @@
   .price.feat .amt .cur{color:#8A8D95}
   .currency-toggle{display:inline-flex;align-items:center;gap:2px;background:var(--bg-2);border:1px solid var(--rule);border-radius:999px;padding:3px;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;margin-left:12px;vertical-align:middle}
   .currency-toggle button{background:none;border:none;cursor:pointer;padding:4px 10px;border-radius:999px;color:var(--ink-3);transition:all .15s ease;letter-spacing:.04em}
-  .currency-toggle button.active{background:var(--ink);color:var(--bg)}
+  .currency-toggle button.active{background:var(--accent);color:var(--ink)}
   .currency-switcher{display:flex;align-items:center;gap:8px;margin-top:28px;flex-wrap:wrap}
   .currency-switcher-label{font-size:12px;color:var(--ink-3);font-weight:500;margin-right:4px;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.08em}
   .cur-btn{padding:10px 24px;border-radius:999px;border:2px solid var(--rule-2);background:var(--card);font-size:16px;font-weight:700;cursor:pointer;color:var(--ink-2);transition:all .15s ease;font-family:'JetBrains Mono',monospace;letter-spacing:.03em;box-shadow:0 1px 3px rgba(15,17,21,.06)}
-  .cur-btn.active{background:var(--ink);color:var(--bg);border-color:var(--ink);box-shadow:0 4px 14px rgba(15,17,21,.18)}
+  .cur-btn.active{background:var(--accent);color:var(--ink);border-color:var(--accent);box-shadow:0 4px 14px color-mix(in oklab,var(--accent) 40%,transparent)}
   .cur-btn:hover:not(.active){background:var(--bg-2);border-color:var(--ink-3)}
   .price .desc{color:var(--ink-2);font-size:14px;margin-bottom:20px}
   .price.feat .desc{color:#C6C8CE}
